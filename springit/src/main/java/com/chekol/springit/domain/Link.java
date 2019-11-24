@@ -1,15 +1,16 @@
 package com.chekol.springit.domain;
 
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import io.micrometer.core.lang.NonNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
@@ -25,6 +26,8 @@ public class Link {
 	
 	
 	//comments
+	@OneToMany(mappedBy = "link")
+	private List<Comment> comments = new ArrayList<>();
 	
 	
 
