@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import com.chekol.springit.domain.Comment;
 import com.chekol.springit.domain.Link;
 import com.chekol.springit.repositary.CommentRepositary;
-import com.chekol.springit.repositary.LinkRepositary;
+import com.chekol.springit.repositary.LinkRepository;
 
 @SpringBootApplication
 public class SpringitApplication {
@@ -22,7 +22,7 @@ public class SpringitApplication {
 	}
 	
 	//@Bean
-	CommandLineRunner runner(LinkRepositary linkRepositary, CommentRepositary commentRepositary) {
+	CommandLineRunner runner(LinkRepository linkRepositary, CommentRepositary commentRepositary) {
 			return args -> {
 				Link link = new Link("Geting Started with Spring boot 2","https://www.danvega.dev/docs/spring-boot-2-docs");
 				linkRepositary.save(link);
