@@ -53,6 +53,6 @@ public class LinkController {
 	
 	@DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
-		return linkRepository.deleteById(id);
+		linkRepository.deleteById(id);
     }
 }
