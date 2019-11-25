@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @Controller
+
 public class HomeController {
 	
-	@GetMapping("/")
-	public String home(Model model, HttpServletRequest request) {
-		model.addAttribute("message", "Hellow World");
-		return "index";
+	@GetMapping("/link")
+	public String home(Model model) {
+		model.addAttribute("title", "Hello Thymleaf");
+		return "home";
 	}
 
 }
